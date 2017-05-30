@@ -1,5 +1,5 @@
 ### Subsonic Docker
 
-[subsonic.org](http://www.subsonic.org/)
+[http://www.subsonic.org](http://www.subsonic.org/)
 
-[bitbucket.org](https://bitbucket.org/stlouisn/docker_subsonic/src)
+[https://bitbucket.org/stlouisn/docker_subsonic](https://bitbucket.org/stlouisn/docker_subsonic/src)
