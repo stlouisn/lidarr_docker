@@ -1,4 +1,4 @@
-### Home-Assistant Docker
+### Subsonic Docker
 
 [subsonic.org](http://www.subsonic.org/)
 
