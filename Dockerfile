@@ -1,6 +1,5 @@
 FROM alpine:latest
 
-#ARG SUBSONIC_VERSION=6.1.beta2
 ARG SUBSONIC_VERSION=6.1.1
 
 RUN \
