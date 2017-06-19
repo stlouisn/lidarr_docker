@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Set timezone
 TZ=${TZ:-UTC}
@@ -24,7 +24,7 @@ chown -R subsonic:subsonic /music /podcasts /playlists /videos
 cd /usr/lib/subsonic
 
 # Start subsonic in console mode
-exec su-exec subsonic \
+exec gosu subsonic \
   /usr/bin/java \
     -Dsubsonic.home=/var/lib/subsonic \
     -Dsubsonic.host=0.0.0.0 \
