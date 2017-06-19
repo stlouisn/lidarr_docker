@@ -1,10 +1,12 @@
 version: '1.0'
+
 steps:
+
     build_image:
         title: Building Docker Image
         type: build
         dockerfile: Dockerfile
-        image_name: stlouisn/subsonic
+        image_name: '${{docker_image}}'
         tag: latest
         #working_directory: ${{main_clone}}
 
@@ -14,10 +16,10 @@ steps:
         candidate: '${{build_image}}'
         tag: latest
         credentials:
-            username: '${{dockerUsername}}'
-            password: '${{dockerPassword}}'
+            username: '${{docker_username}}'
+            password: '${{docker_password}}'
     
     slack_notify:
         image: tutum/curl
         commands:
-            - curl -X POST --data-urlencode 'payload={"text":"Test slack integration via yaml"}' ${{SLACK_WEB_URL}}
+            - curl -X POST --data-urlencode 'payload={"text":"Test slack integration via yaml ${{docker_image}}"}' ${{slack_url}}
