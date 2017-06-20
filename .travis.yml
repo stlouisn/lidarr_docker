@@ -6,14 +6,14 @@ services:
 language: bash
 
 install:
-  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d %H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/$DOCKER_IMAGE .
+  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d %H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/"${DOCKER_IMAGE}" .
 
 before_script:
-  - docker run -d --name $DOCKER_IMAGE stlouisn/$DOCKER_IMAGE
+  - docker run -d --name "${DOCKER_IMAGE}" stlouisn/"${DOCKER_IMAGE}"
 
 script:
-  - docker ps | grep -q stlouisn/$DOCKER_IMAGE
+  - docker ps | grep -q stlouisn/"${DOCKER_IMAGE}"
 
 after_success:
-  - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - docker push stlouisn/$DOCKER_IMAGE
+  - docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
+  - docker push stlouisn/"${DOCKER_IMAGE}"
