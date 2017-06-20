@@ -6,8 +6,9 @@ services:
 language: bash
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - curl -sSL https://experimental.docker.com/ | sudo sh
+  #- sudo apt-get update
+  #- sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 
 install:
   - docker build --squash --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/$DOCKER_IMAGE .
