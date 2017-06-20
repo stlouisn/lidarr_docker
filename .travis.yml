@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get update
   - docker version
   - sudo mkdir -p /etc/docker
-  - sudo echo '{\"experimental\": true}' >> /etc/docker/daemon.json
+  - sudo printf "{\"experimental\": true}" >> /etc/docker/daemon.json
   - sudo cat /etc/docker/daemon.json
   - docker version
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
