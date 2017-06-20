@@ -18,7 +18,7 @@ fi
 
 # Fix user and group ownerships
 chown -R subsonic:subsonic /var/lib/subsonic
-chown -R subsonic:subsonic /music /podcasts /playlists /videos
+chown -R subsonic:subsonic /music /playlists /podcasts
 
 # Change workdir
 cd /usr/lib/subsonic
@@ -31,7 +31,7 @@ exec gosu subsonic \
     "$@" \
     -Dsubsonic.contextPath=/ \
     -Dsubsonic.defaultMusicFolder=/music \
-    -Dsubsonic.defaultPodcastFolder=/podcasts \
     -Dsubsonic.defaultPlaylistFolder=/playlists \
+    -Dsubsonic.defaultPodcastFolder=/podcasts \
     -Djava.awt.headless=true \
     -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
