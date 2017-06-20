@@ -16,4 +16,8 @@ script:
 
 after_success:
   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - docker push stlouisn/$DOCKER_IMAGE
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker push stlouisn/$DOCKER_IMAGE
+    else
+    docker push stlouisn/$DOCKER_IMAGE:$TRAVIS_BRANCH
+    fi
