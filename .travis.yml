@@ -1,0 +1,21 @@
+sudo: required
+
+group: edge
+
+services:
+  - docker
+
+language: bash
+
+before_install:
+  - docker build -t stlouisn/"${DOCKER_IMAGE}" .
+
+install:
+  - docker run -d --name "${DOCKER_IMAGE}" stlouisn/"${DOCKER_IMAGE}"
+
+script:
+  - docker ps | grep -q stlouisn/${DOCKER_IMAGE}"
+
+after_success:
+  - docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
+  - docker push stlouisn/"${DOCKER_IMAGE}"
