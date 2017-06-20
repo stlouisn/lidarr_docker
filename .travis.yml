@@ -6,21 +6,22 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
   - docker version
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      export DOCKER_TAG="latest";
+    else
+      export DOCKER_TAG=$TRAVIS_BRANCH;
+    fi
 
 install:
-  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/$DOCKER_IMAGE .
+  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t $DOCKER_REPO/$DOCKER_IMAGE:$DOCKER_TAG .
 
 before_script:
-  - docker run -d --name $DOCKER_IMAGE stlouisn/$DOCKER_IMAGE
-  - sleep 30
+  - docker run -d --name $DOCKER_IMAGE $DOCKER_REPO/$DOCKER_IMAGE:DOCKER_TAG
+  - sleep 10
 
 script:
-  - docker ps | grep -q stlouisn/$DOCKER_IMAGE
+  - docker ps | grep -q $DOCKER_REPO/$DOCKER_IMAGE:DOCKER_TAG
 
 after_success:
   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker push stlouisn/$DOCKER_IMAGE:latest;
-    else
-      docker push stlouisn/$DOCKER_IMAGE:$TRAVIS_BRANCH;
-    fi
+  - docker push $DOCKER_REPO/$DOCKER_IMAGE:$DOCKER_TAG;
