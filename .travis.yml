@@ -6,8 +6,11 @@ services:
 language: bash
 
 before_install:
-  - sudo apt-get remove docker-engine
+  - sudo apt-get remove docker-engine --purge
+  - sudo apt-get autoremove --purge
   - curl -sSL https://experimental.docker.com/ | sudo sh
+  - cat /etc/default/docker
+  - docker version
   #- sudo apt-get update
   #- sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 
