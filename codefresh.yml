@@ -10,6 +10,11 @@ steps:
         tag: latest
         #working_directory: ${{main_clone}}
 
+    notify_slack:
+        image: tutum/curl
+        commands:
+            - curl -X POST --data-urlencode 'payload={"text":"Succesfully built ${{docker_image}} docker image"}' ${{slack_url}}
+
     push_image:
         title: Pushing to Docker Registry
         type: push
@@ -18,8 +23,3 @@ steps:
         credentials:
             username: '${{docker_username}}'
             password: '${{docker_password}}'
-    
-    slack_notify:
-        image: tutum/curl
-        commands:
-            - curl -X POST --data-urlencode 'payload={"text":"Succesfully built ${{docker_image}} docker image"}' ${{slack_url}}
