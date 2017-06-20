@@ -1,7 +1,5 @@
 FROM ubuntu:rolling
 
-COPY rootfs /
-
 ARG SUBSONIC_VERSION=6.1.1
 
 ARG BUILD_DATE
@@ -15,6 +13,8 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-ref=${VCS_REF} \
       org.label-schema.vcs-url="https://github.com/stlouisn/docker_subsonic" \
       org.label-schema.version=${SUBSONIC_VERSION}
+
+COPY rootfs /
 
 RUN \
 
