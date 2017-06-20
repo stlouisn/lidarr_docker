@@ -14,7 +14,7 @@ install:
   - docker run -d --name "${DOCKER_IMAGE}" stlouisn/"${DOCKER_IMAGE}"
 
 script:
-  - docker ps | grep -q stlouisn/${DOCKER_IMAGE}"
+  - docker ps | grep -q stlouisn/"${DOCKER_IMAGE}"
 
 after_success:
   - docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
