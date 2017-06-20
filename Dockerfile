@@ -73,8 +73,8 @@ RUN \
     # Install ffmpeg
     apt install -y --no-install-recommends \
         ffmpeg \
-        lame \
-        flac && \
+        flac \
+        lame && \
 
     # Remove build-tools
     apt purge -y \
@@ -97,6 +97,7 @@ EXPOSE 4040 4443
 
 VOLUME /music \
        /playlists \
+       /podcasts \
        /var/lib/subsonic
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
