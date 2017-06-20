@@ -2,18 +2,19 @@ FROM ubuntu:rolling
 
 COPY rootfs /
 
-ARG SUBSONIC_VERSION=6.1.1
-ARG BUILD_DATE
-ARG VCS_REF
+ARG BUILD_DATE \
+    VCS_REF \
 
-LABEL org.label-schema.build-date=${BUILD_DATE}
-LABEL org.label-schema.description="Personal Media Streamer"
-LABEL org.label-schema.name="Subsonic"
-LABEL org.label-schema.schema-version="1.0"
-LABEL org.label-schema.url="http://www.subsonic.org"
-LABEL org.label-schema.vcs-ref=${VCS_REF}
-LABEL org.label-schema.vcs-url="https://github.com/stlouisn/docker_subsonic"
-LABEL org.label-schema.version=${SUBSONIC_VERSION}
+    SUBSONIC_VERSION=6.1.1
+
+LABEL org.label-schema.build-date=${BUILD_DATE} \
+      org.label-schema.description="Personal Media Streamer" \
+      org.label-schema.name="Subsonic" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.url="http://www.subsonic.org" \
+      org.label-schema.vcs-ref=${VCS_REF} \
+      org.label-schema.vcs-url="https://github.com/stlouisn/docker_subsonic" \
+      org.label-schema.version=${SUBSONIC_VERSION}
 
 RUN \
 
@@ -94,12 +95,8 @@ ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 
 EXPOSE 4040 4443
 
-VOLUME \
-
-  /var/lib/subsonic \
-  /music \
-  /podcasts \
-  /playlists \
-  /videos
+VOLUME /music \
+       /playlists \
+       /var/lib/subsonic
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
