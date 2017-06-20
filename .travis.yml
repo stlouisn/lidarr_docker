@@ -25,8 +25,3 @@ after_success:
     else
       docker push stlouisn/$DOCKER_IMAGE:$TRAVIS_BRANCH;
     fi
-
-notifications:
-  webhooks:
-    urls:
-      - $MICROBADGER_HOOK
