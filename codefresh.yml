@@ -10,7 +10,7 @@ steps:
         tag: latest
         #working_directory: ${{main_clone}}
 
-    push_to_registry:
+    push_image:
         title: Pushing to Docker Registry
         type: push
         candidate: '${{build_image}}'
@@ -22,4 +22,4 @@ steps:
     slack_notify:
         image: tutum/curl
         commands:
-            - curl -X POST --data-urlencode 'payload={"text":"Test slack integration via yaml ${{docker_image}}"}' ${{slack_url}}
+            - curl -X POST --data-urlencode 'payload={"text":"Succesfully built ${{docker_image}} docker image"}' ${{slack_url}}
