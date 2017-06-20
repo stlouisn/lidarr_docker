@@ -2,10 +2,10 @@ FROM ubuntu:rolling
 
 COPY rootfs /
 
-ARG BUILD_DATE \
-    VCS_REF \
+ARG SUBSONIC_VERSION=6.1.1
 
-    SUBSONIC_VERSION=6.1.1
+ARG BUILD_DATE
+ARG VCS_REF
 
 LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.description="Personal Media Streamer" \
