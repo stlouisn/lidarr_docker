@@ -1,4 +1,6 @@
- ### [Subsonic Personal Media Streamer](http://www.subsonic.org/)
+### Subsonic Docker
+
+*Personal Media Streamer*
 
 ### Docker Image
 
@@ -10,4 +12,4 @@
 
 ### Links
 
-[[subsonic.org]](http://www.subsonic.org/)
+[www.subsonic.org](http://www.subsonic.org/)
