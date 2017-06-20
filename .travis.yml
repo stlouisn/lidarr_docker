@@ -1,16 +1,14 @@
 sudo: required
 
-group: edge
-
 services:
   - docker
 
 language: bash
 
-before_install:
-  - docker build -t stlouisn/"${DOCKER_IMAGE}" .
-
 install:
+  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS-REF=$COMMIT -t stlouisn/"${DOCKER_IMAGE}" .
+
+before_script:
   - docker run -d --name "${DOCKER_IMAGE}" stlouisn/"${DOCKER_IMAGE}"
 
 script:
