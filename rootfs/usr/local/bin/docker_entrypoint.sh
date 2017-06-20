@@ -17,8 +17,8 @@ if [ ! -e /var/lib/subsonic/transcode/ffmpeg ]; then
 fi
 
 # Fix user and group ownerships
-chown -R subsonic:subsonic /var/lib/subsonic
 chown -R subsonic:subsonic /music /playlists /podcasts
+chown -R subsonic:subsonic /var/lib/subsonic
 
 # Change workdir
 cd /usr/lib/subsonic
