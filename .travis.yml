@@ -10,7 +10,7 @@ before_install:
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 
 install:
-  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/$DOCKER_IMAGE .
+  - docker build --squash --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t stlouisn/$DOCKER_IMAGE .
 
 before_script:
   - docker run -d --name $DOCKER_IMAGE stlouisn/$DOCKER_IMAGE
