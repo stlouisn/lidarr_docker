@@ -1,5 +1,7 @@
 FROM ubuntu:rolling
 
+MAINTAINER stlouisn
+
 ARG SUBSONIC_VERSION=6.1.1
 
 ARG BUILD_DATE
@@ -11,7 +13,7 @@ LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.schema-version="1.0" \
       org.label-schema.url="http://www.subsonic.org" \
       org.label-schema.vcs-ref=${VCS_REF} \
-      org.label-schema.vcs-url="https://github.com/stlouisn/docker_subsonic" \
+      org.label-schema.vcs-url="https://github.com/stlouisn/subsonic_docker" \
       org.label-schema.version=${SUBSONIC_VERSION}
 
 COPY rootfs /
