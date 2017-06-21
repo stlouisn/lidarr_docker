@@ -8,8 +8,8 @@
 
 ### Build
 
-[![Build Status](https://travis-ci.org/stlouisn/docker_subsonic.svg?branch=master)](https://travis-ci.org/stlouisn/docker_subsonic)
+[![Build Status](https://travis-ci.org/stlouisn/subsonic_docker.svg?branch=master)](https://travis-ci.org/stlouisn/subsonic_docker)
 
 ### Links
 
-[www.subsonic.org](http://www.subsonic.org/)
+[subsonic.org](http://www.subsonic.org/)
