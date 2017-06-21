@@ -26,9 +26,9 @@ cd /usr/lib/subsonic
 # Start subsonic in console mode
 exec gosu subsonic \
   /usr/bin/java \
+    "$@" \
     -Dsubsonic.home=/var/lib/subsonic \
     -Dsubsonic.host=0.0.0.0 \
-    "$@" \
     -Dsubsonic.contextPath=/ \
     -Dsubsonic.defaultMusicFolder=/music \
     -Dsubsonic.defaultPlaylistFolder=/playlists \
