@@ -90,8 +90,10 @@ RUN \
     apt autoclean -y && \
 
     # Cleanup temporary folders
-    rm -rf /tmp/* && \
-    rm -rf /var/lib/apt/lists/*
+        /root/.cache \
+        /root/.wget-hsts \
+        /tmp/* \
+        /var/lib/apt/lists/*
 
 ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 
