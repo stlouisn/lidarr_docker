@@ -90,6 +90,7 @@ RUN \
     apt autoclean -y && \
 
     # Cleanup temporary folders
+    rm -rf \
         /root/.cache \
         /root/.wget-hsts \
         /tmp/* \
