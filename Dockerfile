@@ -72,11 +72,12 @@ RUN \
     rm /usr/lib/subsonic/README.TXT && \
     chown -R subsonic:subsonic /usr/lib/subsonic && \
 
-    # Install ffmpeg
+    # Install codecs
     apt install -y --no-install-recommends \
         ffmpeg \
         flac \
-        lame && \
+        lame \
+        xmp && \
 
     # Remove build-tools
     apt purge -y \
