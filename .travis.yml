@@ -13,7 +13,7 @@ before_install:
     fi
 
 install:
-  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%d_%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t $DOCKER_USERNAME/$DOCKER_IMAGE:$DOCKER_TAG .
+  - docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t $DOCKER_USERNAME/$DOCKER_IMAGE:$DOCKER_TAG .
 
 after_success:
   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
