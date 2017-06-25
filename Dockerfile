@@ -1,7 +1,5 @@
 FROM ubuntu:rolling
 
-MAINTAINER stlouisn
-
 ARG SUBSONIC_VERSION=6.1.1
 
 ARG BUILD_DATE
