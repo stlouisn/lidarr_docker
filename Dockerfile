@@ -97,7 +97,8 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-ENV JAVA_HOME /usr/lib/jvm/default-java/jre
+ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
+    LC_ALL=C.UTF-8
 
 EXPOSE 4040 4443
 
