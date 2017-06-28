@@ -12,4 +12,4 @@
 
 ### Links
 
-[subsonic.org](http://www.subsonic.org/)
+http://www.subsonic.org/
