@@ -1,13 +1,12 @@
 FROM ubuntu:rolling
 
-ARG SUBSONIC_VERSION=6.1.1
+ARG SUBSONIC_VERSION
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.description="Personal Media Streamer" \
-      #org.label-schema.docker.cmd="" \
       org.label-schema.name="Subsonic" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.url="http://www.subsonic.org" \
