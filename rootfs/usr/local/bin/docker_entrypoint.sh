@@ -7,41 +7,43 @@ echo $TZ > /etc/timezone
 
 # Make sure volumes are mounted correctly
 if [ ! -d /var/lib/subsonic ]; then
-  printf "\nERROR: volume /var/lib/subsonic not mounted.\n" >&2
-  exit 1
+    printf "\nERROR: volume /var/lib/subsonic not mounted.\n" >&2
+    exit 1
 fi
 
-# Create symlink for transcoding
+# Create symlinks for transcoding
 if [ ! -e /var/lib/subsonic/transcode/ffmpeg ]; then
-  ln -s /usr/bin/ffmpeg /var/lib/subsonic/transcode/ffmpeg
+    ln -s /usr/bin/ffmpeg /var/lib/subsonic/transcode/ffmpeg
 fi
 if [ ! -e /var/lib/subsonic/transcode/lame ]; then
-  ln -s /usr/bin/lame /var/lib/subsonic/transcode/lame
+    ln -s /usr/bin/lame /var/lib/subsonic/transcode/lame
 fi
 if [ ! -e /var/lib/subsonic/transcode/flac ]; then
-  ln -s /usr/bin/flac /var/lib/subsonic/transcode/flac
+    ln -s /usr/bin/flac /var/lib/subsonic/transcode/flac
 fi
-
 if [ ! -e /var/lib/subsonic/transcode/xmp ]; then
-  ln -s /usr/bin/xmp /var/lib/subsonic/transcode/xmp
+    ln -s /usr/bin/xmp /var/lib/subsonic/transcode/xmp
 fi
 
 # Fix user and group ownerships
-chown -R subsonic:subsonic /music /playlists /podcasts
-chown -R subsonic:subsonic /var/lib/subsonic
+chown -R subsonic:subsonic \
+    /music \
+    /playlists \
+    /podcasts \
+    /var/lib/subsonic
 
 # Change workdir
 cd /usr/lib/subsonic
 
 # Start subsonic in console mode
 exec gosu subsonic \
-  /usr/bin/java \
-    "$@" \
-    -Dsubsonic.home=/var/lib/subsonic \
-    -Dsubsonic.host=0.0.0.0 \
-    -Dsubsonic.contextPath=/ \
-    -Dsubsonic.defaultMusicFolder=/music \
-    -Dsubsonic.defaultPlaylistFolder=/playlists \
-    -Dsubsonic.defaultPodcastFolder=/podcasts \
-    -Djava.awt.headless=true \
-    -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
+    /usr/bin/java \
+        "$@" \
+        -Dsubsonic.home=/var/lib/subsonic \
+        -Dsubsonic.host=0.0.0.0 \
+        -Dsubsonic.contextPath=/ \
+        -Dsubsonic.defaultMusicFolder=/music \
+        -Dsubsonic.defaultPlaylistFolder=/playlists \
+        -Dsubsonic.defaultPodcastFolder=/podcasts \
+        -Djava.awt.headless=true \
+        -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
