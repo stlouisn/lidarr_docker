@@ -14,7 +14,7 @@ before_install:
   - export SUBSONIC_VERSION=`curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
 
 install:
-  - echo `git remote get-url origin | awk -F ".git" {print $1}`
+  - echo `git remote get-url origin | head --bytes -4`
 
 #  - >
 #    docker build
