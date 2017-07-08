@@ -18,7 +18,7 @@ install:
   - >
     docker build
     --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-    --label org.label-schema.build-version=${TRAVIS_BUILD_NUMBER}
+    --label org.label-schema.build-number=${TRAVIS_BUILD_NUMBER}
     --label org.label-schema.schema-version="1.0"
     --label org.label-schema.vcs-ref=`git rev-parse --short HEAD`
     --label org.label-schema.vcs-url=`git remote get-url origin | head -c-5`
@@ -38,6 +38,6 @@ notifications:
     on_failure: change
   slack:
     rooms:
-      - stlouisn:${SLACK_API}#random
+      - stlouisn:${SLACK_API}${SLACK_CHANNEL}
     on_success: always
     on_failure: always
