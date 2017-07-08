@@ -12,12 +12,9 @@ before_install:
       export DOCKER_TAG=${TRAVIS_BRANCH};
     fi
 
-  #- export SUBSONIC_VERSION=`curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
-
 install:
   - >
     docker build
-    --build-arg SUBSONIC_VERSION=${APP_VERSION}
     --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
     --label org.label-schema.build-number=${TRAVIS_BUILD_NUMBER}
     --label org.label-schema.schema-version="1.0"
@@ -37,8 +34,3 @@ notifications:
   email:
     on_success: never
     on_failure: change
-#  slack:
-#    rooms:
-#      - stlouisn:${SLACK_API}${SLACK_CHANNEL}
-#    on_success: always
-#    on_failure: always
