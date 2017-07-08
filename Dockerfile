@@ -91,7 +91,8 @@ RUN \
 ENV JAVA_HOME=/usr/lib/jvm/default-java/jre \
     LC_ALL=C.UTF-8
 
-EXPOSE 4040 4443
+EXPOSE 4040 \
+       4443
 
 VOLUME /music \
        /playlists \
