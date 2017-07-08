@@ -2,17 +2,9 @@ FROM ubuntu:rolling
 
 ARG SUBSONIC_VERSION=6.0
 
-ARG BUILD_DATE
-ARG VCS_REF
-
-LABEL org.label-schema.build-date=${BUILD_DATE} \
-      org.label-schema.description="Personal Media Streamer" \
+LABEL org.label-schema.description="Personal Media Streamer" \
       org.label-schema.name="Subsonic" \
-      org.label-schema.schema-version="1.0" \
       org.label-schema.url="http://www.subsonic.org" \
-      org.label-schema.vcs-ref=${VCS_REF} \
-      org.label-schema.vcs-url="https://github.com/stlouisn/subsonic_docker" \
-      org.label-schema.vendor="stlouisn" \
       org.label-schema.version=${SUBSONIC_VERSION}
 
 COPY rootfs /
