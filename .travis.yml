@@ -3,7 +3,7 @@ dist: trusty
 sudo: required
 
 before_install:
-  - sudo apt-get update
+  - sudo apt-get update -q
   - sudo apt-get upgrade -y
   - docker version
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then
@@ -36,8 +36,8 @@ notifications:
   email:
     on_success: change
     on_failure: change
-#  slack:
-#    rooms:
-#      - stlouisn:${SLACK_API}#random
-#    on_success: always
-#    on_failure: always
+  slack:
+    rooms:
+      - stlouisn:${SLACK_API}#random
+    on_success: always
+    on_failure: always
