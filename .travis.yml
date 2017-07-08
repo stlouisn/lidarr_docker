@@ -11,10 +11,11 @@ before_install:
     else
       export DOCKER_TAG=${TRAVIS_BRANCH};
     fi
+  - export SUBSONIC_VERSION=`curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
 
 install:
-  - echo "building image: ${DOCKER_IMAGE}:${DOCKER_TAG}"
-  - echo `git remote get-url origin`
+  - echo `git remote get-url origin | awk -F ".git" {print $1}`
+
 #  - >
 #    docker build
 #    --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
