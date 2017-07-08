@@ -13,7 +13,7 @@ before_install:
     fi
 
 install:
-  - echo "building image: ${DOCKER_IMAGE}:${DOCKER_TAG}"
+  - echo "building image ${DOCKER_IMAGE}:${DOCKER_TAG}"
   - echo `git remote get-url origin`
 #  - >
 #    docker build
