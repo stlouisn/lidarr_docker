@@ -38,12 +38,14 @@ cd /usr/lib/subsonic
 # Start subsonic in console mode
 exec gosu subsonic \
     /usr/bin/java \
-        "$@" \
-        -Dsubsonic.home=/var/lib/subsonic \
-        -Dsubsonic.host=0.0.0.0 \
         -Dsubsonic.contextPath=/ \
         -Dsubsonic.defaultMusicFolder=/music \
         -Dsubsonic.defaultPlaylistFolder=/playlists \
         -Dsubsonic.defaultPodcastFolder=/podcasts \
+        -Dsubsonic.home=/var/lib/subsonic \
+        -Dsubsonic.host=0.0.0.0 \
+        -Dsubsonic.httpsPort=4443 \
+        -Dsubsonic.port=4040 \
+        -Xmx512m
         -Djava.awt.headless=true \
         -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
