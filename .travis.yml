@@ -11,24 +11,26 @@ before_install:
     else
       export DOCKER_TAG=${TRAVIS_BRANCH};
     fi
-  - export SUBSONIC_VERSION=`curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
+
+  #- export SUBSONIC_VERSION=`curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
 
 install:
-  - echo `git remote get-url origin | head -c-5`
+  - >
+    docker build
+    --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+    --label org.label-schema.build-version=${TRAVIS_BUILD_NUMBER}
+    --label org.label-schema.schema-version="1.0"
+    --label org.label-schema.vcs-ref=`git rev-parse --short HEAD`
+    --label org.label-schema.vcs-url=`git remote get-url origin | head -c-5`
+    --label org.label-schema.vendor="stlouisn"
+    --tag ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} .
 
-#  - >
-#    docker build
-#    --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-#    --label org.label-schema.vcs-ref=`git rev-parse --short HEAD`
-#    --tag ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}
-#    .
-
-#after_success:
-#  - >
-#    docker login
-#    --username ${DOCKER_USERNAME}
-#    --password ${DOCKER_PASSWORD}
-#  - docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}
+after_success:
+  - >
+    docker login
+    --username ${DOCKER_USERNAME}
+    --password ${DOCKER_PASSWORD}
+  - docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}
 
 notifications:
   email:
