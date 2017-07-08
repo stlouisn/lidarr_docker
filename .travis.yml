@@ -17,6 +17,7 @@ before_install:
 install:
   - >
     docker build
+    --build-arg SUBSONIC_VERSION=${APP_VERSION}
     --label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
     --label org.label-schema.build-number=${TRAVIS_BUILD_NUMBER}
     --label org.label-schema.schema-version="1.0"
