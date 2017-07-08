@@ -34,10 +34,10 @@ after_success:
 
 notifications:
   email:
-    on_success: change
+    on_success: never
     on_failure: change
-  slack:
-    rooms:
-      - stlouisn:${SLACK_API}${SLACK_CHANNEL}
-    on_success: always
-    on_failure: always
+#  slack:
+#    rooms:
+#      - stlouisn:${SLACK_API}${SLACK_CHANNEL}
+#    on_success: always
+#    on_failure: always
