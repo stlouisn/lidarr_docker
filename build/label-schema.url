@@ -1,1 +1,3 @@
- 	http://www.subsonic.org
+#!/bin/bash
+
+echo "http://www.subsonic.org"
