@@ -46,6 +46,6 @@ exec gosu subsonic \
         -Dsubsonic.host=0.0.0.0 \
         -Dsubsonic.httpsPort=4443 \
         -Dsubsonic.port=4040 \
-        -Xmx512m
+        -Xmx512m \
         -Djava.awt.headless=true \
         -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
