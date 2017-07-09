@@ -47,7 +47,7 @@ RUN \
         curl \
         wget && \
 
-    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/build/label-schema.version | bash`
+    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/build/label-schema.version | bash` && \
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
