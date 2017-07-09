@@ -30,7 +30,6 @@ script:
   #    
   - >
     docker build
-    --build-arg INSTALL_VERSION=${VERSION}
     --label org.label-schema.build-date=${BUILD_DATE}
     --label org.label-schema.build-number=${BUILD_NUMBER}
     --label org.label-schema.description="${DESCRIPTION}"
