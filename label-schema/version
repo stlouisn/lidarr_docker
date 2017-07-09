@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#echo `curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
+
+# version 6.1 and 6.1.1 are not working correctly with iphone/android apps
+echo "6.0"
