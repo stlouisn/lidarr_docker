@@ -1,7 +1,5 @@
 FROM ubuntu:rolling
 
-ARG SUBSONIC_VERSION
-
 COPY rootfs /
 
 RUN \
@@ -46,7 +44,10 @@ RUN \
     
     # Install build-tools
     apt install -y --no-install-recommends \
+        curl \
         wget && \
+
+    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/build/label-schema.version | sh`
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
@@ -67,6 +68,7 @@ RUN \
 
     # Remove build-tools
     apt purge -y \
+        curl \
         wget && \
 
     # Set docker_entrypoint as executable
