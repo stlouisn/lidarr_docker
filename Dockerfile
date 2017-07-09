@@ -1,11 +1,6 @@
 FROM ubuntu:rolling
 
-ARG SUBSONIC_VERSION=6.0
-
-LABEL org.label-schema.description="Personal Media Streamer" \
-      org.label-schema.name="Subsonic" \
-      org.label-schema.url="http://www.subsonic.org" \
-      org.label-schema.version=${SUBSONIC_VERSION}
+ARG SUBSONIC_VERSION
 
 COPY rootfs /
 
