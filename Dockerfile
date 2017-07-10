@@ -1,6 +1,6 @@
 FROM ubuntu:rolling
 
-COPY rootfs /
+COPY docker.rootfs /
 
 RUN \
 
@@ -21,10 +21,6 @@ RUN \
     # Install gosu
     apt install -y --no-install-recommends \
         gosu && \
-
-    # Install Java
-    apt install -y --no-install-recommends \
-        default-jre-headless && \
 
     # Create subsonic group
     groupadd \
@@ -47,7 +43,11 @@ RUN \
         curl \
         wget && \
 
-    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/build/label-schema.version | bash` && \
+    # Install Java
+    apt install -y --no-install-recommends \
+        default-jre-headless && \
+
+    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/docker.labels/version | bash` && \
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
