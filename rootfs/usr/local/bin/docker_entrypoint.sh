@@ -13,15 +13,19 @@ fi
 
 # Create symlinks for transcoding
 if [ ! -e /var/lib/subsonic/transcode/ffmpeg ]; then
+    mkdir -p /var/lib/subsonic/transcode
     ln -s /usr/bin/ffmpeg /var/lib/subsonic/transcode/ffmpeg
 fi
 if [ ! -e /var/lib/subsonic/transcode/lame ]; then
+    mkdir -p /var/lib/subsonic/transcode
     ln -s /usr/bin/lame /var/lib/subsonic/transcode/lame
 fi
 if [ ! -e /var/lib/subsonic/transcode/flac ]; then
+    mkdir -p /var/lib/subsonic/transcode
     ln -s /usr/bin/flac /var/lib/subsonic/transcode/flac
 fi
 if [ ! -e /var/lib/subsonic/transcode/xmp ]; then
+    mkdir -p /var/lib/subsonic/transcode
     ln -s /usr/bin/xmp /var/lib/subsonic/transcode/xmp
 fi
 
