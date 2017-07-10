@@ -18,6 +18,10 @@ RUN \
         ca-certificates \
         openssl && \
 
+    # Install curl
+    apt install -y --no-install-recommends \
+        curl && \
+
     # Install gosu
     apt install -y --no-install-recommends \
         gosu && \
@@ -37,11 +41,6 @@ RUN \
         --gid 10000 \
         --uid 10000 \
         subsonic && \
-    
-    # Install build-tools
-    apt install -y --no-install-recommends \
-        curl \
-        wget && \
 
     # Install Java
     apt install -y --no-install-recommends \
@@ -51,8 +50,8 @@ RUN \
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
-    wget -q -O- https://s3-eu-west-1.amazonaws.com/subsonic-public/download/subsonic-${SUBSONIC_VERSION}-standalone.tar.gz \
-        | tar zxf - -C /usr/lib/subsonic && \
+    curl -SL https://s3-eu-west-1.amazonaws.com/subsonic-public/download/subsonic-${SUBSONIC_VERSION}-standalone.tar.gz -o /tmp/subsonic.tar.gz && \
+    tar xzvf /tmp/subsonic.tar.gz -C /usr/lib/subsonic && \
     rm /usr/lib/subsonic/subsonic.sh && \
     rm /usr/lib/subsonic/subsonic.bat && \
     rm /usr/lib/subsonic/Getting\ Started.html && \
@@ -65,11 +64,6 @@ RUN \
         flac \
         lame \
         xmp && \
-
-    # Remove build-tools
-    apt purge -y \
-        curl \
-        wget && \
 
     # Set docker_entrypoint as executable
     chmod 0744 /usr/local/bin/docker_entrypoint.sh && \
