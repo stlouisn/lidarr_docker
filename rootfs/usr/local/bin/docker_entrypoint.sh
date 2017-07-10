@@ -30,11 +30,22 @@ if [ ! -e /var/lib/subsonic/transcode/xmp ]; then
 fi
 
 # Fix user and group ownerships
-chown -R subsonic:subsonic \
-    /music \
-    /playlists \
-    /podcasts \
-    /var/lib/subsonic
+MOUNT_MODE=`mount | grep "/music" | awk -F "(" '{print $2}' | cut -c -2`
+if [ $MOUNT_MODE == "rw" ]; then
+    chown -R subsonic:subsonic /music
+fi
+MOUNT_MODE=`mount | grep "/playlists" | awk -F "(" '{print $2}' | cut -c -2`
+if [ $MOUNT_MODE == "rw" ]; then
+    chown -R subsonic:subsonic /playlists
+fi
+MOUNT_MODE=`mount | grep "/podcasts" | awk -F "(" '{print $2}' | cut -c -2`
+if [ $MOUNT_MODE == "rw" ]; then
+    chown -R subsonic:subsonic /podcasts
+fi
+MOUNT_MODE=`mount | grep "/var/lib/subsonic" | awk -F "(" '{print $2}' | cut -c -2`
+if [ $MOUNT_MODE == "rw" ]; then
+    chown -R subsonic:subsonic /var/lib/subsonic
+fi
 
 # Change workdir
 cd /usr/lib/subsonic
@@ -49,7 +60,7 @@ exec gosu subsonic \
         -Dsubsonic.home=/var/lib/subsonic \
         -Dsubsonic.host=0.0.0.0 \
         -Dsubsonic.httpsPort=4443 \
-        -Dsubsonic.port=4040 \
+        -Dsubsonic.port=0 \
         -Xmx512m \
         -Djava.awt.headless=true \
         -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
