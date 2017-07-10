@@ -1,5 +1,7 @@
 version: '2.2'
 
+services:
+
   subsonic:
     image: stlouisn/subsonic
     container_name: subsonic
