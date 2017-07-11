@@ -11,6 +11,11 @@ if [ ! -d /var/lib/subsonic ]; then
     exit 1
 fi
 
+# Copy default subsonic.properties file
+if [ ! -e /var/lib/subsonic/subsonic.properties ]; then
+    cp /etc/subsonic/subsonic.properties /var/lib/subsonic/.
+fi
+
 # Create symlinks for transcoding
 if [ ! -e /var/lib/subsonic/transcode/ffmpeg ]; then
     mkdir -p /var/lib/subsonic/transcode
@@ -60,7 +65,7 @@ exec gosu subsonic \
         -Dsubsonic.home=/var/lib/subsonic \
         -Dsubsonic.host=0.0.0.0 \
         -Dsubsonic.httpsPort=4443 \
-        -Dsubsonic.port=0 \
+        -Dsubsonic.port=4040 \
         -Xmx512m \
         -Djava.awt.headless=true \
         -jar /usr/lib/subsonic/subsonic-booter-jar-with-dependencies.jar
