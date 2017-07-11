@@ -6,9 +6,15 @@ services:
     image: stlouisn/subsonic
     container_name: subsonic
     hostname: subsonic
+    environment:
+      - TZ=UTC
+      - LC_ALL=C.UTF-8
     restart: always
     volumes:
       - ./subsonic/config:/var/lib/subsonic:rw
       - ./subsonic/music:/music:rw
       - ./subsonic/playlists:/playlists:rw
       - ./subsonic/podcasts:/podcasts:rw
+    ports:
+      - 4040
+      - 4443
