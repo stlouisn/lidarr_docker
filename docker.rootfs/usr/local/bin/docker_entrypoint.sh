@@ -47,10 +47,7 @@ MOUNT_MODE=`mount | grep "/podcasts" | awk -F "(" '{print $2}' | cut -c -2`
 if [ $MOUNT_MODE == "rw" ]; then
     chown -R subsonic:subsonic /podcasts
 fi
-MOUNT_MODE=`mount | grep "/var/lib/subsonic" | awk -F "(" '{print $2}' | cut -c -2`
-if [ $MOUNT_MODE == "rw" ]; then
-    chown -R subsonic:subsonic /var/lib/subsonic
-fi
+chown -R subsonic:subsonic /var/lib/subsonic
 
 # Change workdir
 cd /usr/lib/subsonic
