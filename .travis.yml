@@ -28,7 +28,6 @@ before_script:
     fi
 
 script:
-  #    
   - >
     docker build
     --label org.label-schema.build-date=${BUILD_DATE}
