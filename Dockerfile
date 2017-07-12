@@ -52,11 +52,13 @@ RUN \
     mkdir -p /usr/lib/subsonic && \
     curl -SL https://s3-eu-west-1.amazonaws.com/subsonic-public/download/subsonic-${SUBSONIC_VERSION}-standalone.tar.gz -o /tmp/subsonic.tar.gz && \
     tar xzvf /tmp/subsonic.tar.gz -C /usr/lib/subsonic && \
+    chown -R subsonic:subsonic /usr/lib/subsonic && \
+
+    # Remove unnecessary files
     rm /usr/lib/subsonic/subsonic.sh && \
     rm /usr/lib/subsonic/subsonic.bat && \
     rm /usr/lib/subsonic/Getting\ Started.html && \
     rm /usr/lib/subsonic/README.TXT && \
-    chown -R subsonic:subsonic /usr/lib/subsonic && \
 
     # Install codecs
     apt install -y --no-install-recommends \
