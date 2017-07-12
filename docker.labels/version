@@ -3,5 +3,5 @@
 # AUTOMATIC VERSION GRABBER
 #echo `curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
 
-# VERSION 6.1 / 6.1.1 ARE NOT WORKING WITH IPHONE, FORCING VERSION 6.0
+# STABLE RELEASE
 echo "6.0"
