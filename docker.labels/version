@@ -2,6 +2,3 @@
 
 # ROLLING RELEASE
 echo `curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
-
-# STABLE RELEASE
-#echo "6.0"
