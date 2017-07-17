@@ -8,10 +8,6 @@ before_install:
   - docker version
   - sudo chmod +x docker.labels/*
 
-env:
-  - VERSION=`bash docker.labels/version`
-  - VERSION="6.0"
-
 install:
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
   - export BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
@@ -22,7 +18,7 @@ install:
   - export URL=`docker.labels/url`
   - export VCS_REF=`git rev-parse --short HEAD`
   - export VCS_URL=`git remote get-url origin | head -c-5`
-  - VERSION=`docker.labels/version`
+  - export VERSION=`docker.labels/version`
 
 before_script:
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then
