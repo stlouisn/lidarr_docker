@@ -9,15 +9,19 @@ before_install:
   - sudo chmod +x docker.labels/*
 
 env:
-  - BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-  - BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
-  - DESCRIPTION=`docker.labels/description`
-  - MAINTAINER="stlouisn"
-  - NAME=`docker.labels/name`
-  - SCHEMA_VERSION="1.0"
-  - URL=`docker.labels/url`
-  - VCS_REF=`git rev-parse --short HEAD`
-  - VCS_URL=`git remote get-url origin | head -c-5`
+  - VERSION=`docker.labels/version`
+  - VERSION=6.0
+
+install:
+  - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+  - export BUILD_NUMBER=${TRAVIS_BUILD_NUMBER}
+  - export DESCRIPTION=`docker.labels/description`
+  - export MAINTAINER="stlouisn"
+  - export NAME=`docker.labels/name`
+  - export SCHEMA_VERSION="1.0"
+  - export URL=`docker.labels/url`
+  - export VCS_REF=`git rev-parse --short HEAD`
+  - export VCS_URL=`git remote get-url origin | head -c-5`
   - VERSION=`docker.labels/version`
 
 before_script:
