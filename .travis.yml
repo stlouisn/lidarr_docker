@@ -9,7 +9,7 @@ before_install:
   - sudo chmod +x docker.labels/*
 
 env:
-  - VERSION=`docker.labels/version`
+  - VERSION=`sudo docker.labels/version`
   - VERSION=6.0
 
 install:
