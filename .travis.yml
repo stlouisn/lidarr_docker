@@ -1,8 +1,10 @@
 language: bash
 dist: trusty
+services: docker
 sudo: required
 
 before_install:
+  - docker version
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
