@@ -9,8 +9,8 @@ before_install:
   - sudo chmod +x docker.labels/*
 
 env:
-  - VERSION=`sudo docker.labels/version`
-  - VERSION=6.0
+  - VERSION=`bash docker.labels/version`
+  - VERSION="6.0"
 
 install:
   - export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
