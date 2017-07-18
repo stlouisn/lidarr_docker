@@ -2,6 +2,10 @@ language: bash
 dist: trusty
 sudo: required
 
+branches:
+  only:
+    - master
+
 env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
@@ -17,32 +21,25 @@ env:
 
   matrix:
     include:
-      - env: VERSION="`bash docker.labels/version`"
-      - env: VERSION="6.0" TRAVIS_BRANCH="6.0"
-        branches:
-          only:
-            - master
-#        before_script:
-#          - if [ "${TRAVIS_BRANCH}" == "master" ]; then
-#              export DOCKER_TAG="latest";
-#            else
-#              export DOCKER_TAG=${TRAVIS_BRANCH};
-#            fi
+      - env: DOCKER_TAG="latest"  VERSION="`bash docker.labels/version`"
+      - env: DOCKER_TAG="6.0"     VERSION="6.0"
 
-before_install:
+#before_install:
+
+install:
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
 
-install:
+after_install:
   - echo ${VERSION} > docker.rootfs/version
 
-before_script:
-  - if [ "${TRAVIS_BRANCH}" == "master" ]; then
-      export DOCKER_TAG="latest";
-    else
-      export DOCKER_TAG=${TRAVIS_BRANCH};
-    fi
+#before_script:
+#  - if [ "${TRAVIS_BRANCH}" == "master" ]; then
+#      export DOCKER_TAG="latest";
+#    else
+#      export DOCKER_TAG=${TRAVIS_BRANCH};
+#    fi
 
 script:
   - >
@@ -58,7 +55,9 @@ script:
     --label org.label-schema.vcs-url=${VCS_URL}
     --label org.label-schema.version=${VERSION}
     --tag ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} .
- 
+
+#after_script:
+
 after_success:
   - docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
   - docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}
