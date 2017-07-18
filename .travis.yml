@@ -21,10 +21,8 @@ env:
 
 matrix:
   include:
-    - env: DOCKER_TAG="latest"
-      env: VERSION="`bash docker.labels/version`"
-    - env: DOCKER_TAG="6.0"
-      env: VERSION="6.0"
+    - env: DOCKER_TAG="latest" VERSION="`bash docker.labels/version`"
+    - env: DOCKER_TAG="6.0" VERSION="6.0"
 
 #before_install:
 
