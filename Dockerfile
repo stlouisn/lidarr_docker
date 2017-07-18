@@ -46,7 +46,7 @@ RUN \
     apt install -y --no-install-recommends \
         default-jre-headless && \
 
-    export SUBSONIC_VERSION=`curl -sSL https://raw.githubusercontent.com/stlouisn/subsonic_docker/master/docker.labels/version | bash` && \
+    export SUBSONIC_VERSION=`cat /version` && \
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
