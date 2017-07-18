@@ -20,11 +20,11 @@ matrix:
     - env:RELEASE="latest"
       branches:
         only:
-          -master
+          - master
     - env: RELEASE="stable"
       branches:
         only:
-          -master
+          - master
 
 before_install:
   - sudo apt-get update -q
