@@ -13,25 +13,14 @@ env:
     - URL="`bash docker.labels/url`"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
-#    - VERSION="`bash docker.labels/version`"
-
-matrix:
-  include:
-    - env:RELEASE="latest"
-      branches:
-        only:
-          - master
-    - env: RELEASE="stable"
-      branches:
-        only:
-          - master
+    - VERSION="`bash docker.labels/version`"
 
 before_install:
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
 
-after_install:
+install:
   - echo ${VERSION} > docker.rootfs/version
 
 before_script:
@@ -55,8 +44,6 @@ script:
     --label org.label-schema.vcs-url=${VCS_URL}
     --label org.label-schema.version=${VERSION}
     --tag ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} .
-
-#after_script:
 
 after_success:
   - docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
