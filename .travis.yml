@@ -13,19 +13,29 @@ env:
     - URL="`bash docker.labels/url`"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
-    - VERSION="`bash docker.labels/version`"
+#    - VERSION="`bash docker.labels/version`"
 
-#  matrix:
-#    include:
-#      - env: RELEASE="latest" VERSION="`bash docker.labels/version`"
-#      - env: RELEASE="stable"
+  matrix:
+    include:
+      - env: VERSION="`bash docker.labels/version`"
+      - env: VERSION="6.0" TRAVIS_BRANCH="6.0"
+        branches:
+          only:
+            - master
+#        before_script:
+#          - if [ "${TRAVIS_BRANCH}" == "master" ]; then
+#              export DOCKER_TAG="latest";
+#            else
+#              export DOCKER_TAG=${TRAVIS_BRANCH};
+#            fi
 
 before_install:
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
 
-#install:
+install:
+  - echo ${VERSION} > docker.rootfs/version
 
 before_script:
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then
@@ -33,7 +43,6 @@ before_script:
     else
       export DOCKER_TAG=${TRAVIS_BRANCH};
     fi
-  - echo ${VERSION} > docker.rootfs/version
 
 script:
   - >
