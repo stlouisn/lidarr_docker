@@ -17,13 +17,16 @@ env:
 
 matrix:
   include:
-    - env: RELEASE="latest"
+    - env:RELEASE="latest"
+      branches:
+        only:
+          -master
     - env: RELEASE="stable"
+      branches:
+        only:
+          -master
 
 before_install:
-  - if [ "${RELEASE}" == "stable" ] && [ "${TRAVIS_BRANCH}" -ne "master" ]; then exit 0; fi
-
-install:
   - sudo apt-get update -q
   - sudo apt-get upgrade -q -y
   - docker version
@@ -33,13 +36,9 @@ after_install:
 
 before_script:
   - if [ "${TRAVIS_BRANCH}" == "master" ]; then
-      if [ "${RELEASE}" == "latest" ]; then
-        export DOCKER_TAG="latest";
-      else
-        export DOCKER_TAG="6.0";
-      fi
+      export DOCKER_TAG="latest";
     else
-      export DOCKER_TAG=${TRAVIS_BRANCH};
+      export DOCKER_TAG="${TRAVIS_BRANCH}";
     fi
 
 script:
