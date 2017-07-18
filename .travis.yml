@@ -2,10 +2,6 @@ language: bash
 dist: trusty
 sudo: required
 
-branches:
-  only:
-    - master
-
 env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
@@ -21,10 +17,11 @@ env:
 
 matrix:
   include:
-    - env: DOCKER_TAG="latest" VERSION="`bash docker.labels/version`"
-    - env: DOCKER_TAG="6.0" VERSION="6.0"
+    - env: RELEASE="latest"
+    - env: RELEASE="stable"
 
-#before_install:
+before_install:
+  - if [ "${RELEASE}" == "stable" ] && [ "${TRAVIS_BRANCH}" -ne "master" ]; then exit 0; fi
 
 install:
   - sudo apt-get update -q
@@ -34,12 +31,16 @@ install:
 after_install:
   - echo ${VERSION} > docker.rootfs/version
 
-#before_script:
-#  - if [ "${TRAVIS_BRANCH}" == "master" ]; then
-#      export DOCKER_TAG="latest";
-#    else
-#      export DOCKER_TAG=${TRAVIS_BRANCH};
-#    fi
+before_script:
+  - if [ "${TRAVIS_BRANCH}" == "master" ]; then
+      if [ "${RELEASE}" == "latest" ]; then
+        export DOCKER_TAG="latest";
+      else
+        export DOCKER_TAG="6.0";
+      fi
+    else
+      export DOCKER_TAG=${TRAVIS_BRANCH};
+    fi
 
 script:
   - >
