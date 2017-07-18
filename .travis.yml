@@ -33,7 +33,7 @@ before_script:
     else
       export DOCKER_TAG=${TRAVIS_BRANCH};
     fi
-  - cat ${VERSION} > docker.rootfs/version
+  - echo ${VERSION} > docker.rootfs/version
 
 script:
   - >
