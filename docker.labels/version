@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # ROLLING RELEASE
-echo `curl -sS http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
+echo `curl -sSL http://www.subsonic.org/pages/download.jsp | grep "standalone.tar.gz" | awk -F "-" '{print $2}'`
