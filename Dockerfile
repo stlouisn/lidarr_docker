@@ -46,7 +46,7 @@ RUN \
     apt install -y --no-install-recommends \
         default-jre-headless && \
 
-    export SUBSONIC_VERSION=`cat /version` && \
+    export SUBSONIC_VERSION=`cat /subsonic_version` && \
 
     # Install subsonic
     mkdir -p /usr/lib/subsonic && \
