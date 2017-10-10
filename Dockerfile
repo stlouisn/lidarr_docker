@@ -56,6 +56,7 @@ RUN \
     # Install sonarr
     apt-get install -y --no-install-recommends \
         nzbdrone && \
+    chown -R sonarr:sonarr /opt/NzbDrone && \
 
     # Remove temporary-tools
     apt-get purge -y \
