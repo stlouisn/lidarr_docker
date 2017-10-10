@@ -9,4 +9,4 @@
 
 ### Links
 
-https://sonarr.tv/#features
+https://sonarr.tv/
