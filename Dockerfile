@@ -75,4 +75,6 @@ RUN \
 
 VOLUME /var/lib/sonarr
 
+EXPOSE 8989
+
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
