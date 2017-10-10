@@ -10,7 +10,7 @@ env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
     - BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}"
-    - DOCKER_DESCRIPTION="download, sort, and rename television shows"
+    - DOCKER_DESCRIPTION="download, sort, and rename tv shows"
     - DOCKER_NAME="sonarr"
     - DOCKER_URL="https://sonarr.tv/"
     - DOCKER_VERSION=`curl -sSL https://github.com/Sonarr/Sonarr/releases | grep '.tar.gz' | head -n 1 | awk -F '/v' '{print $2}' | awk -F '.tar' '{print $1}'`
