@@ -13,7 +13,7 @@ env:
     - DOCKER_DESCRIPTION="download, sort, and rename television shows"
     - DOCKER_NAME="sonarr"
     - DOCKER_URL="https://sonarr.tv/"
-    - DOCKER_VERSION="0.0"
+    - DOCKER_VERSION=`curl -sSL https://github.com/Sonarr/Sonarr/releases | grep '.tar.gz' | head -n 1 | awk -F '/v' '{print $2}' | awk -F '.tar' '{print $1}'`
     - MAINTAINER="stlouisn"
     - SCHEMA_VERSION="1.0"
     - VCS_REF="`git rev-parse --short HEAD`"
@@ -48,8 +48,7 @@ script:
 
 after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
-  - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_RELEASE}
-  - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_BRANCH}
+  - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_IMAGE}
 
 notifications:
   email:
