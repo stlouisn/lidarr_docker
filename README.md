@@ -9,6 +9,5 @@
 
 ### Links
 
-https://sonarr.tv/
-
-https://github.com/Sonarr/Sonarr
+- https://sonarr.tv/
+- https://github.com/Sonarr/Sonarr
