@@ -1,6 +1,6 @@
 ### Sonarr Docker
 
-*Download, Sort, and Rename TV Shows*
+*TV Show Downloader and Organizer*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/sonarr.svg)](https://microbadger.com/images/stlouisn/sonarr)
 [![Commit](https://images.microbadger.com/badges/commit/stlouisn/sonarr.svg)](https://microbadger.com/images/stlouisn/sonarr)
@@ -9,5 +9,4 @@
 
 ### Links
 
-https://sonarr.tv/  
-https://github.com/Sonarr/Sonarr  
+https://sonarr.tv/
