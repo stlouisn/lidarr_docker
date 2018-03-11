@@ -1,0 +1,22 @@
+version: '2.3'
+
+services:
+
+  sonarr:
+    image: stlouisn/sonarr:latest
+    container_name: sonarr
+    hostname: sonarr
+    environment:
+      - TZ=UTC
+    restart: always
+    volumes:
+      - ./sonarr/config:/config:rw
+      - ./storage/downloads:/downloads:rw
+      - ./storage/tvshows:/tv:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    ports:
+      - 8989
