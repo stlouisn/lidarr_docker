@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Set timezone
-TZ=${TZ:-UTC}
-cp /usr/share/zoneinfo/$TZ /etc/localtime
-echo $TZ > /etc/timezone
-
 # Delete pid if it exists
 [[ -e /var/lib/sonarr/nzbdrone.pid ]] && rm -f /var/lib/sonarr/nzbdrone.pid
 
