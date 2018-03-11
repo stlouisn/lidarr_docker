@@ -10,7 +10,7 @@ services:
       - TZ=UTC
     restart: always
     volumes:
-      - ./sonarr/config:/config:rw
+      - ./sonarr/config:/var/lib/sonarr:rw
       - ./storage/downloads:/downloads:rw
       - ./storage/tvshows:/tv:rw
     logging:
