@@ -2,7 +2,7 @@
 
 # Make sure volume '/var/lib/sonarr' is writeable
 if [[ ! -d /var/lib/sonarr ]]; then
-    echo -e "\nError: volume '/var/lib/sonarr' not mounted.\n" >&2
+    echo -e "\nError: volume '/var/lib/sonarr' is not mounted.\n" >&2
     exit 1
 elif [[ `mount | grep '/var/lib/sonarr' | awk -F '(' {'print $2'} | cut -c -2` == "ro" ]]; then
     echo -e "\nError: volume '/var/lib/sonarr' is readonly.\n" >&2
