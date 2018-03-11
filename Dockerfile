@@ -56,7 +56,7 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-VOLUME /var/lib/sonarr
+VOLUME /config
 
 EXPOSE 8989
 
