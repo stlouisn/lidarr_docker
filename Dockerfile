@@ -1,30 +1,10 @@
-FROM ubuntu:rolling
+FROM stlouisn/ubuntu:rolling
 
 COPY rootfs /
 
 RUN \
 
     export DEBIAN_FRONTEND=noninteractive && \
-
-    # Update apt-cache
-    apt-get update && \
-
-    # Install tzdata
-    apt-get install -y --no-install-recommends \
-        tzdata && \
-
-    # Install SSL
-    apt-get install -y --no-install-recommends \
-        ca-certificates \
-        openssl && \
-
-    # Install curl
-    apt-get install -y --no-install-recommends \
-        curl && \
-
-    # Install gosu
-    apt-get install -y --no-install-recommends \
-        gosu && \
 
     # Create sonarr group
     groupadd \
@@ -41,6 +21,9 @@ RUN \
         --gid 10000 \
         --uid 10000 \
         sonarr && \
+
+    # Update apt-cache
+    apt-get update && \
 
     # Install temporary-tools
     apt-get install -y --no-install-recommends \
