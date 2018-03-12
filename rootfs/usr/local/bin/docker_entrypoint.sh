@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Make sure volume '/var/lib/sonarr' is writeable
+# Make sure volume '/var/lib/sonarr' is mounted and writeable
 if [[ ! -d /var/lib/sonarr ]]; then
     echo -e "\nError: volume '/var/lib/sonarr' is not mounted.\n" >&2
     exit 1
