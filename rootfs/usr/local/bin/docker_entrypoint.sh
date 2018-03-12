@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#=========================================================================================
+
 # Make sure volume '/var/lib/sonarr' is mounted and writeable
 if [[ ! -d /var/lib/sonarr ]]; then
     echo -e "\nError: volume '/var/lib/sonarr' is not mounted.\n" >&2
@@ -14,6 +16,8 @@ chown -R sonarr:sonarr /var/lib/sonarr
 
 # Delete pid if it exists
 [[ -e /var/lib/sonarr/nzbdrone.pid ]] && rm -f /var/lib/sonarr/nzbdrone.pid
+
+#=========================================================================================
 
 # Start sonarr in console mode
 exec gosu sonarr \
