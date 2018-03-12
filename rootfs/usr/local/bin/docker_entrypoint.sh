@@ -11,7 +11,7 @@ elif [[ `mount | grep '/var/lib/sonarr' | awk -F '(' {'print $2'} | cut -c -2` =
     exit 1
 fi
 
-# Fix user and group ownerships
+# Fix user and group ownerships for '/var/lib/sonarr'
 chown -R sonarr:sonarr /var/lib/sonarr
 
 # Delete pid if it exists
