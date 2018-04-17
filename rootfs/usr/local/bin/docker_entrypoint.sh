@@ -15,7 +15,7 @@ fi
 chown -R lidarr:lidarr /var/lib/lidarr
 
 # Delete pid if it exists
-#[[ -e /var/lib/lidarr/nzbdrone.pid ]] && rm -f /var/lib/lidarr/nzbdrone.pid
+[[ -e /var/lib/lidarr/lidarr.pid ]] && rm -f /var/lib/lidarr/lidarr.pid
 
 #=========================================================================================
 
