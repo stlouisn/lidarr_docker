@@ -2,17 +2,17 @@ version: '2.3'
 
 services:
 
-  sonarr:
-    image: stlouisn/sonarr:latest
-    container_name: sonarr
-    hostname: sonarr
+  lidarr:
+    image: stlouisn/lidarr:latest
+    container_name: lidarr
+    hostname: lidarr
     environment:
       - TZ=UTC
     restart: always
     volumes:
-      - ./sonarr/config:/var/lib/sonarr:rw
+      - ./lidarr/config:/var/lib/lidarr:rw
       - ./storage/downloads:/downloads:rw
-      - ./storage/tvshows:/tv:rw
+      - ./storage/music:/music:rw
     logging:
       driver: json-file
       options:
