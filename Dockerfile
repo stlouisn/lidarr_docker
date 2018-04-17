@@ -6,44 +6,44 @@ RUN \
 
     export DEBIAN_FRONTEND=noninteractive && \
 
-    # Create sonarr group
+    # Create lidarr group
     groupadd \
         --system \
         --gid 10000 \
-        sonarr && \
+        lidarr && \
 
-    # Create sonarr user
+    # Create lidarr user
     useradd \
         --system \
         --no-create-home \
         --shell /sbin/nologin \
-        --comment sonarr \
+        --comment lidarr \
         --gid 10000 \
         --uid 10000 \
-        sonarr && \
+        lidarr && \
 
     # Update apt-cache
     apt-get update && \
 
     # Install temporary-tools
-    apt-get install -y --no-install-recommends \
-        dirmngr && \
+    #apt-get install -y --no-install-recommends \
+    #    dirmngr && \
 
     # Add sonarr apt-repository
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
-    echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.list && \
+    #apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
+    #echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.list && \
 
     # Update apt-cache
     apt-get update && \
 
     # Install sonarr
-    apt-get install -y --no-install-recommends \
-        nzbdrone && \
-    chown -R sonarr:sonarr /opt/NzbDrone && \
+    #apt-get install -y --no-install-recommends \
+    #    nzbdrone && \
+    #chown -R sonarr:sonarr /opt/NzbDrone && \
 
     # Remove temporary-tools
-    apt-get purge -y \
-        dirmngr && \
+    #apt-get purge -y \
+    #    dirmngr && \
 
     # Clean apt-cache
     apt autoremove -y --purge && \
@@ -56,6 +56,6 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-VOLUME /var/lib/sonarr
+VOLUME /var/lib/lidarr
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
