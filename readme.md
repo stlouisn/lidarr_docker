@@ -1,10 +1,10 @@
-### Sonarr Docker
+### Lidarr Docker
 
-*'TV Show Downloader and Organizer'*
+*'Music Downloader and Organizer'*
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/sonarr.svg)](https://microbadger.com/images/stlouisn/sonarr)
-[![Commit](https://images.microbadger.com/badges/commit/stlouisn/sonarr.svg)](https://microbadger.com/images/stlouisn/sonarr)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/sonarr.svg)](https://microbadger.com/images/stlouisn/sonarr)
-[![Build](https://travis-ci.org/stlouisn/sonarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/sonarr_docker)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
+[![Commit](https://images.microbadger.com/badges/commit/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
+[![Build](https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/lidarr_docker)
 
-###### *https://sonarr.tv/*
+###### *https://github.com/lidarr/Lidarr*
