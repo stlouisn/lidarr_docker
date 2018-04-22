@@ -1,25 +1,28 @@
+[travis_logo]: https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master
+[travis_url]: https://travis-ci.org/stlouisn/lidarr_docker
+[docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/lidarr.svg
+[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/lidarr.svg
+[docker_hub_url]: https://hub.docker.com/r/stlouisn/lidarr
+
+[microbadger_latest_url]: https://microbadger.com/images/stlouisn/lidarr
+
 [feathub_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/lidarr_docker
-[docker_pulls]: https://img.shields.io/docker/pulls/stlouisn/lidarr.svg
-[docker_stars]: https://img.shields.io/docker/stars/stlouisn/lidarr.svg
-[docker_url]: https://hub.docker.com/r/stlouisn/lidarr
 [issues_url]: https://github.com/stlouisn/lidarr_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
-[travis_icon]: https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master
-[travis_url]: https://travis-ci.org/stlouisn/lidarr_docker
 
 ## Lidarr Docker
 
-[![Build Status][travis_icon]][travis_url]
-[![Docker Stars][docker_stars]][docker_url]
-[![Docker Pulls][docker_pulls]][docker_url]
+[![Build Status][travis_logo]][travis_url]
+[![Docker Stars][docker_stars_logo]][docker_hub_url]
+[![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
 Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
+[![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)][microbadger_url]
 
 ### Usage
 
