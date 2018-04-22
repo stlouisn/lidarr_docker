@@ -1,8 +1,7 @@
 [issues_url]: https://github.com/stlouisn/lidarr_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
-[feature_url]: http://feathub.com/stlouisn/lidarr_docker?format=svg
-[features_url_1]: http://feathub.com/stlouisn/lidarr_docker?format=svg
-[features_url_2]: http://feathub.com/stlouisn/lidarr_docker
+[features_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
+[features_url]: http://feathub.com/stlouisn/lidarr_docker
 
 ## Lidarr Docker
 
@@ -30,9 +29,7 @@ docker run
 
 ### Feature Requests
 
-[![Feature Requests](http://feathub.com/stlouisn/lidarr_docker?format=svg)](http://feathub.com/stlouisn/lidarr_docker)
-
-[![Feature Requests][feature_url]][features_url_2]
+[![Feature Requests][features_data]][features_url]
 
 ### Support
 
