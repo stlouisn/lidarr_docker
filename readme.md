@@ -1,6 +1,7 @@
 ## Lidarr Docker
 
 [![Build Status](https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/lidarr_docker)
+[![Docker Stars](https://img.shields.io/docker/stars/stlouisn/lidarr.svg)](https://hub.docker.com/r/stlouisn/lidarr/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/lidarr.svg)](https://hub.docker.com/r/stlouisn/lidarr/)
 
 Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
@@ -21,19 +22,14 @@ docker run
   --port
 ```
 
-
 ### Feature Requests
 
-[![Feature Requests](http://feathub.com/stlouisn/unifi_docker?format=svg)](http://feathub.com/stlouisn/unifi_docker)
+[![Feature Requests](http://feathub.com/stlouisn/lidarr_docker?format=svg)](http://feathub.com/stlouisn/lidarr_docker)
 
 ### Support
 
-[![GitHub Issues](https://img.shields.io/badge/github-issues-red.svg?maxAge=60)](https://github.com/Lidarr/Lidarr/issues)
-[![Slack Channel](https://img.shields.io/badge/chat-slack_lidarr-brightgreen.svg)](https://stlouisn.slack.com/messages/CAAUWAYM9)
+[![GitHub Issues](https://img.shields.io/badge/github-issues-no.svg?colorA=7f7f7f&colorB=c70039&logo=github&maxAge=60)](https://github.com/stlouisn/lidarr_docker/issues)
+[![Slack Channel](https://img.shields.io/badge/-chat-ff69b4.svg?logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
 
 ##### *http://lidarr.audio/*
 ##### *https://github.com/lidarr/Lidarr*
-
-### License
-
-##### *[GNU GPL v3](http://www.gnu.org/licenses/gpl.html)*
