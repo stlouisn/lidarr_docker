@@ -28,8 +28,8 @@ docker run
 
 ### Support
 
-[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=7f7f7f&colorB=ae0032&logo=github&maxAge=60)](https://github.com/stlouisn/lidarr_docker/issues)
-[![Slack Channel](https://img.shields.io/badge/-chat-no.svg?colorA=7f7f7f&colorB=00ae7c&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
+[![Slack Channel](https://img.shields.io/badge/-chat-no.svg?colorA=a7a7a7&colorB=00ae7c&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
+[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=ae0032&logo=github)](https://github.com/stlouisn/lidarr_docker/issues)
 
 ##### *http://lidarr.audio/*
 ##### *https://github.com/lidarr/Lidarr*
