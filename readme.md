@@ -10,10 +10,6 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 [![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
 
-### Ports
-
-### Volumes
-
 ### Running
 
 ```
@@ -33,7 +29,7 @@ docker run
 ### Support
 
 [![GitHub Issues](https://img.shields.io/badge/github-issues-red.svg?maxAge=60)](https://github.com/Lidarr/Lidarr/issues)
-[![Slack Channel](https://img.shields.io/badge/chat-%20%20-brightgreen.svg)](https://stlouisn.slack.com/messages/CAAUWAYM9)
+[![Slack Channel](https://img.shields.io/badge/chat-slack_lidarr-brightgreen.svg)](https://stlouisn.slack.com/messages/CAAUWAYM9)
 
 ##### *http://lidarr.audio/*
 ##### *https://github.com/lidarr/Lidarr*
