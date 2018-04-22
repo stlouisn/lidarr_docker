@@ -36,8 +36,8 @@ docker-compose up --detach --build --remove-orphans
 
 ### Support
 
-[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack)][slack_url]
-[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github)][issues_url]
+[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack&logoWidth=14)][slack_url]
+[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github&logoWidth=14)][issues_url]
 
 ### Links
 
