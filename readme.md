@@ -28,8 +28,8 @@ docker run
 
 ### Support
 
-[![Slack Channel](https://img.shields.io/badge/-chat-no.svg?colorA=a7a7a7&colorB=00ae7c&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
-[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=ae0032&logo=github)](https://github.com/stlouisn/lidarr_docker/issues)
+[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
+[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github)](https://github.com/stlouisn/lidarr_docker/issues)
 
 ### Links
 
