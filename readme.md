@@ -31,5 +31,7 @@ docker run
 [![Slack Channel](https://img.shields.io/badge/-chat-no.svg?colorA=a7a7a7&colorB=00ae7c&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
 [![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=ae0032&logo=github)](https://github.com/stlouisn/lidarr_docker/issues)
 
+### Links
+
 ##### *http://lidarr.audio/*
-##### *https://github.com/lidarr/Lidarr*
+##### *https://github.com/lidarr/lidarr*
