@@ -1,13 +1,18 @@
-[issues_url]: https://github.com/stlouisn/lidarr_docker/issues
-[slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
 [feathub_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/lidarr_docker
+[docker_pulls]: https://img.shields.io/docker/pulls/stlouisn/lidarr.svg
+[docker_stars]: https://img.shields.io/docker/stars/stlouisn/lidarr.svg
+[docker_url]: https://hub.docker.com/r/stlouisn/lidarr
+[issues_url]: https://github.com/stlouisn/lidarr_docker/issues
+[slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
+[travis_icon]: https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master
+[travis_url]: https://travis-ci.org/stlouisn/lidarr_docker
 
 ## Lidarr Docker
 
-[![Build Status](https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/lidarr_docker)
-[![Docker Stars](https://img.shields.io/docker/stars/stlouisn/lidarr.svg)](https://hub.docker.com/r/stlouisn/lidarr/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/stlouisn/lidarr.svg)](https://hub.docker.com/r/stlouisn/lidarr/)
+[![Build Status][travis_icon]][travis_url]
+[![Docker Stars][docker_stars]][docker_url]
+[![Docker Pulls][docker_pulls]][docker_url]
 
 Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
