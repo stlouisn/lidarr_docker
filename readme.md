@@ -7,4 +7,4 @@
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
 [![Build](https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/lidarr_docker)
 
-###### *https://github.com/lidarr/Lidarr*
+###### *http://lidarr.audio/*
