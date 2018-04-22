@@ -1,3 +1,8 @@
+[issues_url]: https://github.com/stlouisn/lidarr_docker/issues
+[slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
+[features_url_1]: http://feathub.com/stlouisn/lidarr_docker?format=svg
+[features_url_2]: http://feathub.com/stlouisn/lidarr_docker
+
 ## Lidarr Docker
 
 [![Build Status](https://travis-ci.org/stlouisn/lidarr_docker.svg?branch=master)](https://travis-ci.org/stlouisn/lidarr_docker)
@@ -26,10 +31,12 @@ docker run
 
 [![Feature Requests](http://feathub.com/stlouisn/lidarr_docker?format=svg)](http://feathub.com/stlouisn/lidarr_docker)
 
+[![Feature Requests](features_url_1)][features_url_2]
+
 ### Support
 
-[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack)](https://stlouisn.slack.com/messages/CAAUWAYM9)
-[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github)](https://github.com/stlouisn/lidarr_docker/issues)
+[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack)][slack_url]
+[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github)][issues_url]
 
 ### Links
 
