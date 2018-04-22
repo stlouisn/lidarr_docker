@@ -35,11 +35,9 @@ docker run
 [![GitHub Issues](https://img.shields.io/badge/github-issues-red.svg?maxAge=60)](https://github.com/Lidarr/Lidarr/issues)
 [![Slack Channel](https://img.shields.io/badge/chat-%20%20-brightgreen.svg)](https://stlouisn.slack.com/messages/CAAUWAYM9)
 
+##### *http://lidarr.audio/*
+##### *https://github.com/lidarr/Lidarr*
+
 ### License
 
 ##### *[GNU GPL v3](http://www.gnu.org/licenses/gpl.html)*
-
-### Links
-
-##### *http://lidarr.audio/*
-##### *https://github.com/lidarr/Lidarr*
