@@ -1,7 +1,7 @@
 [issues_url]: https://github.com/stlouisn/lidarr_docker/issues
 [slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
-[features_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
-[features_url]: http://feathub.com/stlouisn/lidarr_docker
+[feathub_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
+[feathub_url]: http://feathub.com/stlouisn/lidarr_docker
 
 ## Lidarr Docker
 
@@ -16,7 +16,7 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 [![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr.svg)](https://microbadger.com/images/stlouisn/lidarr)
 
-### Running
+### Usage
 
 ```
 docker run
@@ -29,7 +29,7 @@ docker run
 
 ### Feature Requests
 
-[![Feature Requests][features_data]][features_url]
+[![Feature Requests][feathub_data]][feathub_url]
 
 ### Support
 
