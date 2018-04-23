@@ -8,15 +8,69 @@ services:
     hostname: lidarr
     environment:
       - TZ=UTC
+      - LC_ALL=C.UTF-8
     restart: always
     volumes:
-      - ./lidarr/config:/var/lib/lidarr:rw
-      - ./storage/downloads:/downloads:rw
-      - ./storage/music:/music:rw
+      - /docker/lidarr/config:/var/lib/lidarr:rw
+      - /docker/lidarr/downloads:/downloads:rw
+      - /docker/lidarr/music:/music:rw
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
+    depends_on:
+      transmission:
+        condition: service_healthy
+      jackett:
+        condition: service_started
     ports:
-      - 8989
+      - 8686
+
+  jackett:
+    image: linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - TZ=America/Halifax
+      - LC_ALL=C.UTF-8
+      - PGID=10000
+      - PUID=10000
+    restart: always
+    volumes:
+      - /docker/jackett/config:/config:rw
+      - /docker/jackett/downloads:/downloads:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      transmission:
+        condition: service_healthy
+    ports:
+      - 9117
+
+  transmission:
+    image: linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - TZ=America/Halifax
+      - LC_ALL=C.UTF-8
+      - PGID=10000
+      - PUID=10000
+    restart: always
+    volumes:
+      - /docker/transmission/config:/config:rw
+      - /docker/transmission/downloads:/downloads:rw
+      - /docker/transmission/watch:/watch:rw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: "curl -sS localhost:9091 -o /dev/null && echo curl: Successfully connected to localhost port 9091 || exit 1"
+      start_period: 30s
+      interval: 60s
+      timeout: 10s
+      retries: 5
