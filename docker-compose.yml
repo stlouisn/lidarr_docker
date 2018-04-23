@@ -20,10 +20,10 @@ services:
         max-size: "10m"
         max-file: "3"
     depends_on:
-      transmission:
-        condition: service_healthy
       jackett:
         condition: service_started
+      transmission:
+        condition: service_healthy
     ports:
       - 8686
 
@@ -68,6 +68,10 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+    ports:
+      - 9091
+      - 51413
+      - 51413/udp
     healthcheck:
       test: "curl -sS localhost:9091 -o /dev/null && echo curl: Successfully connected to localhost port 9091 || exit 1"
       start_period: 30s
