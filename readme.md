@@ -25,8 +25,13 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 ### Usage
 
 ```
+# create lidarr directory
 cd /docker/lidarr
-curl --silent --show-error --output docker-compose.yml https://raw.githubusercontent.com/stlouisn/lidarr_docker/master/docker-compose.yml
+
+# download docker-compose file
+curl -sS -o docker-compose.yml https://raw.githubusercontent.com/stlouisn/lidarr_docker/master/docker-compose.yml
+
+# start lidarr container
 docker-compose up --detach --build --remove-orphans
 ```
 
