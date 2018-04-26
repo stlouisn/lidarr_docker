@@ -27,7 +27,7 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:    
-    - DOCKER_TAG="develop"
+    - DOCKER_TAG="latest"
       DOCKER_VERSION="`curl -sSL https://services.lidarr.audio/v1/update/${DOCKER_TAG}/changes?os=linux | jq -r '.[0].version'`"
       DOWNLOAD_URL="`curl -sSL https://services.lidarr.audio/v1/update/${DOCKER_TAG}/changes?os=linux | jq -r '.[0].url'`"
 
