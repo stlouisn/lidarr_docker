@@ -22,39 +22,7 @@ RUN \
         --uid 10000 \
         lidarr && \
 
-    # Update apt-cache
-    apt-get update && \
-
-    # Install temporary-tools
-    #apt-get install -y --no-install-recommends \
-    #    dirmngr && \
-
-    # Add sonarr apt-repository
-    #apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
-    #echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.list && \
-
-    # Update apt-cache
-    apt-get update && \
-
-    # Install sonarr
-    #apt-get install -y --no-install-recommends \
-    #    nzbdrone && \
-    #chown -R sonarr:sonarr /opt/NzbDrone && \
-
-    # Remove temporary-tools
-    #apt-get purge -y \
-    #    dirmngr && \
-
-    # Clean apt-cache
-    apt autoremove -y --purge && \
-    apt autoclean -y && \
-
-    # Cleanup temporary folders
-    rm -rf \
-        /root/.cache \
-        /root/.wget-hsts \
-        /tmp/* \
-        /var/lib/apt/lists/*
+COPY --chown=lidarr:lidarr userfs /
 
 VOLUME /var/lib/lidarr
 
