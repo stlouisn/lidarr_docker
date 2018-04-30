@@ -37,7 +37,7 @@ before_install:
 
 install:
   - mkdir -p ./userfs/usr/lib/lidarr
-  - curl -L ${DOWNLOAD_URL} -o lidarr.tar.gz
+  - curl -L -o lidarr.tar.gz ${DOWNLOAD_URL}
   - tar xzf lidarr.tar.gz -C ./userfs/usr/lib/lidarr --strip-components=1
     
 before_script:
