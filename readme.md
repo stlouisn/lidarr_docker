@@ -7,7 +7,7 @@
 [feathub_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/lidarr_docker
 [issues_url]: https://github.com/stlouisn/lidarr_docker/issues
-[slack_url]: https://stlouisn.slack.com/messages/CAAUWAYM9
+[slack_url]: https://stlouisn.slack.com/messages/CBRNYGY3V
 
 ## Lidarr Docker
 
