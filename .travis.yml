@@ -28,8 +28,8 @@ env:
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:    
     - DOCKER_TAG="latest"
-      LIDARR_BRANCH="develop"
       DOCKER_VERSION="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].version'`"
+      LIDARR_BRANCH="develop"
       DOWNLOAD_URL="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].url'`"
 
 before_install:
