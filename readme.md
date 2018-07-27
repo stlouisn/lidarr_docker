@@ -33,5 +33,6 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 
 ### Links
 
-##### *http://lidarr.audio/*
-##### *https://github.com/lidarr/lidarr*
+*http://lidarr.audio/*
+
+*https://github.com/lidarr/lidarr*
