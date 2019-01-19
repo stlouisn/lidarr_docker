@@ -13,10 +13,5 @@ services:
     volumes:
       - /docker/lidarr/config:/var/lib/lidarr:rw
       - /media/music:/music:rw
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
     ports:
       - 4040:4040
