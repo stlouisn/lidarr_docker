@@ -12,6 +12,7 @@ services:
     restart: always
     volumes:
       - /docker/lidarr/config:/var/lib/lidarr:rw
+      - /media/downloads:/downloads:rw
       - /media/music:/music:rw
     ports:
       - 4040:4040
