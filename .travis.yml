@@ -34,9 +34,9 @@ before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
 
 install:
-  - mkdir -p ./userfs/usr/lib/lidarr
+  - mkdir -p ./userfs/opt/Lidarr
   - curl -L -o lidarr.tar.gz ${DOWNLOAD_URL}
-  - tar xzf lidarr.tar.gz -C ./userfs/usr/lib/lidarr --strip-components=1
+  - tar xzf lidarr.tar.gz -C ./userfs/opt/Lidarr --strip-components=1
     
 before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' Dockerfile
