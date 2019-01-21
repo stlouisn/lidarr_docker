@@ -24,6 +24,6 @@ RUN \
 
 COPY --chown=lidarr:lidarr userfs /
 
-VOLUME /var/lib/lidarr
+VOLUME /config
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
