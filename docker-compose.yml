@@ -11,7 +11,7 @@ services:
       - TZ=UTC
     restart: always
     volumes:
-      - /docker/lidarr/config:/var/lib/lidarr:rw
+      - /docker/lidarr/config:/config:rw
       - /media/downloads:/downloads:rw
       - /media/music:/music:rw
     ports:
