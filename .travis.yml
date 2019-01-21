@@ -23,10 +23,11 @@ env:
     - SCHEMA_VERSION="1.0"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
-    matrix:    
+    - LIDARR_BRANCH="develop"
+  matrix:    
     - DOCKER_TAG="latest"
-      DOCKER_VERSION="`curl -sSL https://services.lidarr.audio/v1/update/develop/changes?os=linux | jq -r '.[0].version'`"
-      DOWNLOAD_URL="`curl -sSL https://services.lidarr.audio/v1/update/develop/changes?os=linux | jq -r '.[0].url'`"
+      DOCKER_VERSION="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].version'`"
+      DOWNLOAD_URL="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].url'`"
 
 before_install:
   - docker version
