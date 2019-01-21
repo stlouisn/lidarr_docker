@@ -16,9 +16,6 @@ env:
   global:
     - BUILD_DATE="`date -u +%Y-%m-%dT%H:%M:%SZ`"
     - BUILD_NUMBER="$TRAVIS_BUILD_NUMBER"
-    - DISTRIB_ID="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_ID | awk -F '=' {'print $2'}`"
-    - DISTRIB_RELEASE="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_RELEASE | awk -F '=' {'print $2'}`"
-    - DISTRIB_CODENAME="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'cat /etc/lsb-release') | grep DISTRIB_CODENAME | awk -F '=' {'print $2'}`"
     - DOCKER_DESCRIPTION="music downloader and organizer"
     - DOCKER_MAINTAINER="stlouisn"
     - DOCKER_NAME="lidarr"
@@ -26,10 +23,10 @@ env:
     - SCHEMA_VERSION="1.0"
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
-  matrix:    
+    - LIDARR_BRANCH="develop"
+    matrix:    
     - DOCKER_TAG="latest"
       DOCKER_VERSION="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].version'`"
-      LIDARR_BRANCH="develop"
       DOWNLOAD_URL="`curl -sSL https://services.lidarr.audio/v1/update/${LIDARR_BRANCH}/changes?os=linux | jq -r '.[0].url'`"
 
 before_install:
