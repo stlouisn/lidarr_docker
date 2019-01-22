@@ -21,7 +21,7 @@ RUN \
         --comment lidarr \
         --gid 10000 \
         --uid 10000 \
-        lidarr
+        lidarr && \
 
     # Update apt-cache
     apt-get update && \
