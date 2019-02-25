@@ -46,7 +46,7 @@ RUN \
     apt-get install -y --no-install-recommends \
         mediainfo && \
 
-    # Install chromaprint acoustid
+    # Install chromaprint/fpcalc
     apt-get install -y --no-install-recommends \
         libchromaprint-tools && \
 
