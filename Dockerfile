@@ -7,22 +7,6 @@ RUN \
     export DEBIAN_FRONTEND=noninteractive && \
     export `cat /etc/lsb-release | grep -v DESCRIPTION` && \
 
-    # Create lidarr group
-    groupadd \
-        --system \
-        --gid 10000 \
-        lidarr && \
-
-    # Create lidarr user
-    useradd \
-        --system \
-        --no-create-home \
-        --shell /sbin/nologin \
-        --comment lidarr \
-        --gid 10000 \
-        --uid 10000 \
-        lidarr && \
-
     # Update apt-cache
     apt-get update && \
 
@@ -66,7 +50,7 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-COPY --chown=lidarr:lidarr userfs /
+COPY --chown=www-data:www-data userfs /
 
 VOLUME /config
 
