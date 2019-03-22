@@ -3,7 +3,7 @@
 #=========================================================================================
 
 # Fix user and group ownerships for '/config'
-chown -R lidarr:lidarr /config
+chown -R www-data:www-data /config
 
 # Delete pid if it exists
 [[ -e /config/lidarr.pid ]] && rm -f /config/lidarr.pid
@@ -11,6 +11,6 @@ chown -R lidarr:lidarr /config
 #=========================================================================================
 
 # Start lidarr in console mode
-exec gosu lidarr \
+exec gosu www-data \
     /usr/bin/mono --debug \
     /opt/Lidarr/Lidarr.exe -nobrowser -data=/config
