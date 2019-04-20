@@ -14,5 +14,12 @@ services:
       - /docker/lidarr/config:/config
       - /media/downloads:/downloads
       - /media/music:/music
+    mem_limit: 500M
+    memswap_limit: 500M
+    logging:
+      driver: json-file
+        options:
+          max-size: "10M"
+          max-file: "3"
     ports:
       - 4040:4040
