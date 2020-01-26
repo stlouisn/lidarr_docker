@@ -1,4 +1,4 @@
-dist: xenial
+dist: bionic
 group: travis_latest
 
 if: |
@@ -25,10 +25,9 @@ env:
     - SCHEMA_VERSION="1.0"
     - VCS_REF="$(git rev-parse --short HEAD)"
     - VCS_URL="$(git remote get-url origin | head -c-5)"
-
-  matrix:    
+   
     - DOCKER_TAG="latest"
-      DOCKER_VERSION="$(curl -sSL https://services.lidarr.audio/v1/update/master/changes?os=linux | jq -r '.[0].version')"
+    - DOCKER_VERSION="$(curl -sSL https://services.lidarr.audio/v1/update/master/changes?os=linux | jq -r '.[0].version')"
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
