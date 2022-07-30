@@ -5,12 +5,15 @@
 # Fix user and group ownerships for '/config'
 chown -R lidarr:lidarr /config
 
-# Delete pid if it exists
-[[ -e /config/lidarr.pid ]] && rm -f /config/lidarr.pid
+# Delete PID if it exists
+if
+    [ -e "/config/lidarr.pid" ]
+then
+    rm -f /config/lidarr.pid
+fi
 
 #=========================================================================================
 
 # Start lidarr in console mode
 exec gosu lidarr \
-    /usr/bin/mono --debug \
-    /Lidarr/Lidarr.exe -nobrowser -data=/config
+    /Lidarr/Lidarr -nobrowser -data=/config
