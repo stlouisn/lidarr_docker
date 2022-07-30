@@ -1,39 +1,30 @@
-[travis_logo]: https://travis-ci.com/stlouisn/lidarr_docker.svg?branch=master
-[travis_url]: https://travis-ci.com/stlouisn/lidarr_docker
-[docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/lidarr.svg
-[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/lidarr.svg
-[docker_hub_url]: https://hub.docker.com/r/stlouisn/lidarr
-[microbadger_url]: https://microbadger.com/images/stlouisn/lidarr
-[feathub_data]: http://feathub.com/stlouisn/lidarr_docker?format=svg
-[feathub_url]: http://feathub.com/stlouisn/lidarr_docker
-[issues_url]: https://github.com/stlouisn/lidarr_docker/issues
-[slack_url]: https://stlouisn.slack.com/messages/CBRNYGY3V
+[circleci_logo]: https://circleci.com/gh/stlouisn/lidarr_docker.svg?style=svg
+[circleci_url]: https://app.circleci.com/pipelines/github/stlouisn/lidarr_docker
 
-## Lidarr Docker
+[docker_version_logo]: http://img.shields.io/docker/v/stlouisn/lidarr/latest?arch=arm64
+[docker_version_url]: https://hub.docker.com/r/stlouisn/lidarr
 
-[![Build Status][travis_logo]][travis_url]
-[![Docker Stars][docker_stars_logo]][docker_hub_url]
-[![Docker Pulls][docker_pulls_logo]][docker_hub_url]
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[docker_size_logo]: http://img.shields.io/docker/image-size/stlouisn/lidarr/latest
+[docker_size_url]: https://hub.docker.com/r/stlouisn/lidarr
+
+[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/lidarr
+[docker_pulls_url]: https://hub.docker.com/r/stlouisn/lidarr
+
+[license_logo]: https://img.shields.io/github/license/stlouisn/lidarr_docker
+[license_url]: https://github.com/stlouisn/lidarr_docker/blob/main/LICENSE
+
+### lidarr Docker
+
+[![Build Status][circleci_logo]][circleci_url]
+[![Docker Version][docker_version_logo]][docker_version_url]
+[![Docker Size][docker_size_logo]][docker_size_url]
+[![Docker Pulls][docker_pulls_logo]][docker_pulls_url]
+[![License][license_logo]][license_url]
 
 Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
-### Tags
-
-[![Version](https://images.microbadger.com/badges/version/stlouisn/lidarr:latest.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/lidarr:latest.svg)][microbadger_url]
-
-### Feature Requests
-
-[![Feature Requests][feathub_data]][feathub_url]
-
-### Support
-
-[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack&logoWidth=14)][slack_url]
-[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github&logoWidth=14)][issues_url]
-
-### Links
+#### Links
 
 *http://lidarr.audio/*
 
-*https://github.com/lidarr/lidarr*
+*https://wiki.servarr.com/lidarr*
