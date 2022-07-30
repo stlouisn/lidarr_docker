@@ -63,7 +63,7 @@ RUN \
     # Install unicode support
     apt-get install -y --no-install-recommends \
         libicu70 && \
-        
+
     # Install mediainfo
     apt-get install -y --no-install-recommends \
         mediainfo && \
