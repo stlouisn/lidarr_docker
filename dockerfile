@@ -18,8 +18,8 @@ RUN \
     export APP_VERSION="$(curl -sSL --retry 5 --retry-delay 2 "https://lidarr.servarr.com/v1/update/master/changes" | jq -r '.[0].version')" && \
 
     # Download Lidarr
-    if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/radarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
-    if [ "arm64" = "$TARGETARCH" ] ; then curl -o /tmp/radarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
+    if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
+    if [ "arm64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
 
     # Extract Lidarr
     mkdir -p /userfs && \
@@ -55,12 +55,6 @@ RUN \
 
     # Update apt-cache
     apt-get update && \
-
-    # # Install Mono
-    # apt-get install -y --no-install-recommends \
-    #     mono-runtime \
-    #     ca-certificates-mono \
-    #     libmono-cil-dev && \
 
     # Install sqlite
     apt-get install -y --no-install-recommends \
