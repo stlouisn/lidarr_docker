@@ -15,7 +15,7 @@ RUN \
         jq && \
 
     # Get Latest Version
-    export APP_VERSION="$(curl -sSL --retry 5 --retry-delay 2 "https://lidarr.servarr.com/v1/update/master/changes" | jq -r '.[0].version')"
+    export APP_VERSION="$(curl -sSL --retry 5 --retry-delay 2 "https://lidarr.servarr.com/v1/update/master/changes" | jq -r '.[0].version')" && \
 
     # Download Lidarr
     if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/radarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
