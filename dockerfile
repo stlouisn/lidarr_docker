@@ -14,7 +14,7 @@ RUN \
     apt-get install -y --no-install-recommends \
         jq && \
 
-    # Get Version
+    # Get Latest Version
     export APP_VERSION="$(curl -sSL --retry 5 --retry-delay 2 "https://lidarr.servarr.com/v1/update/master/changes" | jq -r '.[0].version')"
 
     # Download Lidarr
@@ -66,6 +66,10 @@ RUN \
     apt-get install -y --no-install-recommends \
         sqlite3 && \
 
+    # Install unicode support
+    apt-get install -y --no-install-recommends \
+        libicu70 && \
+        
     # Install mediainfo
     apt-get install -y --no-install-recommends \
         mediainfo && \
