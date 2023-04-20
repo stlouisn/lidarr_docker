@@ -18,6 +18,7 @@ RUN \
     # Download Lidarr
     if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
     if [ "arm64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
+    if [ "amd64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-x64.tar.gz" ; fi && \
 
     # Extract Lidarr
     mkdir -p /userfs && \
