@@ -16,9 +16,18 @@ RUN \
         curl && \
 
     # Download Lidarr
-    if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
-    if [ "arm64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
-    if [ "amd64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-x64.tar.gz" ; fi && \
+
+        # ubuntu noble base image causes issues downloading files from github using curl --> temporary working around
+        #if [ "arm" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
+        if [ "arm" = "$TARGETARCH" ] ; then apt-get install -y --no-install-recommends wget2 ; fi && \
+        if [ "arm" = "$TARGETARCH" ] ; then wget2 -O /tmp/lidarr.tar.gz -q "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm.tar.gz" ; fi && \
+
+        # ubuntu noble base image causes issues downloading files from github using curl --> temporary working around
+        #if [ "arm64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
+        if [ "arm64" = "$TARGETARCH" ] ; then apt-get install -y --no-install-recommends wget2 ; fi && \
+        if [ "arm64" = "$TARGETARCH" ] ; then wget2 -O /tmp/lidarr.tar.gz -q "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-arm64.tar.gz" ; fi && \
+
+        if [ "amd64" = "$TARGETARCH" ] ; then curl -o /tmp/lidarr.tar.gz -sSL "https://github.com/Lidarr/Lidarr/releases/download/v$APP_VERSION/Lidarr.master.$APP_VERSION.linux-core-x64.tar.gz" ; fi && \
 
     # Extract Lidarr
     mkdir -p /userfs && \
